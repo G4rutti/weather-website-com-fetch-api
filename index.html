@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/d4c0dbaccd.js" crossorigin="anonymous"></script>
+    <title>Climatempo do Davizinho</title>
 </head>
 <body>
-    
+    <main class="main">
+        <h1>Climatempo</h1>
+        <form>
+            <input type="text" id="cidade" required placeholder="Cidade">
+            <input type="text" id="uf" required placeholder="UF">
+            <i id='pesquisar' class="fa-solid fa-magnifying-glass"></i>
+        </form>
+        <hr>
+        <div class="informacoesCidade">
+            <h2>São Paulo, SP - 26C°</h2>
+            <ul class="condicoesAtuais">
+                <li id="condicoesAtuais">
+                    <i class="fa-solid fa-cloud"></i>
+                    Parcialmente Nublado
+                </li>
+            </ul>
+            <ul class="minMax">
+                <li id="minima">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    18C°
+                </li>
+                <li class="maxima">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    28C°
+                </li>
+            </ul>
+            
+        </div>
+    </main>
 </body>
 </html>

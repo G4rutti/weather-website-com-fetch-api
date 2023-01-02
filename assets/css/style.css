@@ -9,7 +9,12 @@ body{
     font-family: 'Anybody', cursive;
     background-image: linear-gradient(to right, #0962DE, #247FFF);
 }
-
+formulario{
+    display: flex;
+}
+formulario button{
+    height: 3vh;
+}
 hr{
     border-color: #247FFF;
     margin-bottom: 1vw;
@@ -47,7 +52,7 @@ hr{
 #pesquisar{
     cursor: pointer;
     width: 2vw;
-    font-size: large;
+    font-size: medium;
 }
 #cidade{
     height: 3vh;

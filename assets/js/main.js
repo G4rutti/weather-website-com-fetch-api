@@ -1,7 +1,13 @@
 
 //Functions
 const ValidarCampos = () => {
-    return document.getElementById('form-primario').reportValidity()
+    if(document.getElementById("cidade").value == ""){
+        return false
+    }
+    else{
+        return true
+    }
+    
 }
 
 mainFunc = async() => {

@@ -40,7 +40,7 @@ mainFunc = async() => {
                     </li>
                 </ul>
             `
-            console.log(forecast["day"])
+            document.getElementById("cidade").value = ""
         }
         else{
             console.log("algo deu errado")

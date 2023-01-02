@@ -11,17 +11,18 @@
 <body>
     <main class="main">
         <h1>Climatempo</h1>
-        <form>
+        <form id="form-primario">
             <input type="text" id="cidade" required placeholder="Cidade">
-            <input type="text" id="uf" required placeholder="UF">
             <i id='pesquisar' class="fa-solid fa-magnifying-glass"></i>
         </form>
         <hr>
-        <div class="informacoesCidade">
-            <h2>São Paulo, SP - 26C°</h2>
-            <ul class="condicoesAtuais">
+        <div id="infoCidade"class="informacoesCidade">
+            <h2>São Paulo - 26C°</h2>
+            <ul class="condicoesAtuais" id="vasco">
+                <li>
+                    <img src="//cdn.weatherapi.com/weather/64x64/day/386.png" alt="">
+                </li>
                 <li id="condicoesAtuais">
-                    <i class="fa-solid fa-cloud"></i>
                     Parcialmente Nublado
                 </li>
             </ul>
@@ -38,5 +39,6 @@
             
         </div>
     </main>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

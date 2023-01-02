@@ -37,9 +37,11 @@ hr{
     margin-left: 1vw;
 }
 .condicoesAtuais{
-    font-size: 1.2rem;
+    padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
 }
 
 #pesquisar{
@@ -51,7 +53,28 @@ hr{
     height: 3vh;
     width: 20vw;
 }
-#uf{
-    height: 3vh;
-    width: 2vw;
+
+
+@media screen and (max-width:900px) {
+    .main{
+        margin-top: 10vh;
+        width: 80vw;
+    }
+    hr{
+        width: 70vw;
+        margin-top: 2vh;
+    }
+    #cidade{
+        width: 63vw;
+        margin-right: 2vw;
+    }
+    .minMax{
+        padding: 0;
+    }
+    .condicoesAtuais{
+        font-size: 0.8rem;
+    }
+    .minMax li{
+        font-size: 1.5rem;
+    }
 }

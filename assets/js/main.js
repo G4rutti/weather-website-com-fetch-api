@@ -51,7 +51,7 @@ mainFunc = async() => {
 
 //Comunicação com a API
 const fetchTempo = async(cidade) => {
-    const APIResponse = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=663290ca46664c738af234031221806&q=${cidade}&days=1&aqi=no&alerts=no
+    const APIResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=663290ca46664c738af234031221806&q=${cidade}&days=1&aqi=no&alerts=no
     `)
     if(APIResponse.status === 200){
         const data = await APIResponse.json()

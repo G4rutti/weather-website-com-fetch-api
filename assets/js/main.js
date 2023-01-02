@@ -74,5 +74,5 @@ const fetchTraducao = async(traducao) => {
 
 
 //Eventos
-// document.getElementById("pesquisar")
-//     .addEventListener("click", mainFunc)
+document.getElementById("pesquisar")
+    .addEventListener("click", mainFunc)

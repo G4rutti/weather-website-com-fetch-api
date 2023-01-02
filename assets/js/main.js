@@ -16,6 +16,7 @@ mainFunc = async() => {
         const dataTraducao = await fetchTraducao(data["current"]["condition"]["text"])
         console.log(dataTraducao)
         if(data){
+            document.getElementById("cidade").value = ""
             const forecast = data["forecast"]["forecastday"]
             console.log(forecast)
             const divPrincipal = document.getElementById("infoCidade")
@@ -40,7 +41,7 @@ mainFunc = async() => {
                     </li>
                 </ul>
             `
-            document.getElementById("cidade").value = ""
+            
         }
         else{
             console.log("algo deu errado")

@@ -71,7 +71,6 @@ const fetchTraducao = async(traducao) => {
         console.log("Algo deu errado")
     }
 }
-//Troca de informações entre a api e o site
 
 
 //Eventos

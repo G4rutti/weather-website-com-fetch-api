@@ -15,6 +15,7 @@
     <h2>Weather API</h2>
     <p>Ultilizei ela para pegar os dados do tempo da cidade, como a temperatura atual, minima, maxima e condição.</p>
     <h2>MyMemory</h2>
-    <p>Usei o MyMemory para traduzir o texto da condição, pois o mesmo está em inglês. Algumas palavras ficam incorretas, ou no sentido literal. </p>
+    <p>Usei o MyMemory para traduzir o texto da condição, pois o mesmo está em inglês.</p>
+    <span>OBS: Algumas palavras ficam incorretas, ou no sentido literal. </span>
 </body>
 </html>

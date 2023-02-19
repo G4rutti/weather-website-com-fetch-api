@@ -60,20 +60,18 @@ const fetchTraducao = async(traducao) => {
     }
 }
 
-
 async function carregarEstados(){
     const APIResponse = await fetch(`https://brasilapi.com.br/api/ibge/uf/v1
     `)
     if(APIResponse.status === 200){
         const data = await APIResponse.json()
-        console.log(data.length)
-        for (let index = 0; index < data.length; index++) {
+        console.log(data[1]['sigla'])
+        for (let index = 1; index <= data.length; index++) {
             const doc = `
-           <option value=${data[index]["sigla"]}>${data[index]["sigla"]}</option>
+           <option value=${data[index]['sigla']}>${data[index]['sigla']}</option>
            `
-           document.querySelector('#estado').appendChild(doc)  
+           document.querySelector('#estado').append(doc)  
         }
-        
     }else{
         console.log("Algo deu errado")
     }
@@ -83,6 +81,6 @@ async function carregarEstados(){
 document.getElementById("pesquisar")
     .addEventListener("click", mainFunc)
 document.getElementById("estado")
-    .addEventListener("onchange", carregarEstados())
+    .addEventListener("onchange", carregarEstados)
 // document.getElementById("cidades")
 //     .addEventListener("onchange", carregarCidades)

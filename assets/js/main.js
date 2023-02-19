@@ -1,5 +1,5 @@
 mainFunc = async() => {
-        const data = await fetchTempo(document.getElementById("cidades").value,document.getElementById("estado").value)
+        const data = await fetchTempo("campinas", "sp")
         if(data){
             console.log(data)
             // document.getElementById("cidade").value = ""

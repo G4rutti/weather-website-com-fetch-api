@@ -34,20 +34,9 @@ mainFunc = async() => {
 
 //Comunicação com a API
 const fetchTempo = async(cidade, estado) => {
-    const url = `https://api.hgbrasil.com/weather?key=a623e753&city_name=${cidade},${estado}`
+    const url = `https://api.hgbrasil.com/weather?key=633b7c35&city_name=${cidade},${estado}`
     const proxy = `https://cors-anywhere.herokuapp.com/`
     const APIResponse = await fetch(proxy+url)
-    if(APIResponse.status === 200){
-        const data = await APIResponse.json()
-        return data
-    }else{
-        console.log("Algo deu errado")
-    }
-}
-
-const fetchTraducao = async(traducao) => {
-    const APIResponse = await fetch(`https://api.mymemory.translated.net/get?q=${traducao}&langpair=en-GB|pt-BR
-    `)
     if(APIResponse.status === 200){
         const data = await APIResponse.json()
         return data

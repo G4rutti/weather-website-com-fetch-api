@@ -1,5 +1,5 @@
 mainFunc = async() => {
-        const data = await fetchTempo("campinas", "sp")
+        const data = await fetchTempo(document.getElementById("cidades").value, document.getElementById("estado").value)
         if(data){
             console.log(data)
             // document.getElementById("cidade").value = ""
@@ -36,8 +36,9 @@ mainFunc = async() => {
 
 //Comunicação com a API
 const fetchTempo = async(cidade, estado) => {
-    const APIResponse = await fetch(`https://api.hgbrasil.com/weather?key=a623e753&city_name=${cidade},${estado}
-    `)
+    const url = `https://api.hgbrasil.com/weather?key=a623e753&city_name=${cidade},${estado}`
+    const proxy = `https://cors-anywhere.herokuapp.com/`
+    const APIResponse = await fetch(proxy+url)
     if(APIResponse.status === 200){
         const data = await APIResponse.json()
         return data

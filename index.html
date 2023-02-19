@@ -13,8 +13,11 @@
     <main class="main">
         <h1>Climatempo</h1>
         <div class="formulario">
-                <input type="text" id="cidade" required placeholder="Cidade">
-                <button onclick=""><i id='pesquisar' class="fa-solid fa-magnifying-glass"></i></button>
+            <select name="estado" id="estado" onchange="carregarEstados()">
+            </select>
+            <select name="cidades" id="cidades" onchange="carregarCidades()">
+            </select>
+            <button onclick=""><i id='pesquisar' class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         
         <hr>

@@ -1,17 +1,6 @@
 
-//Functions
-const ValidarCampos = () => {
-    if(document.getElementById("cidade").value == ""){
-        return false
-    }
-    else{
-        return true
-    }
-    
-}
 
 mainFunc = async() => {
-    if(ValidarCampos()){
         const data = await fetchTempo(document.getElementById("cidade").value)
         const dataTraducao = await fetchTraducao(data["current"]["condition"]["text"])
         console.log(dataTraducao)
@@ -46,7 +35,6 @@ mainFunc = async() => {
         else{
             console.log("algo deu errado")
         }
-    }
 }
 
 //Comunicação com a API
@@ -73,6 +61,28 @@ const fetchTraducao = async(traducao) => {
 }
 
 
+async function carregarEstados(){
+    const APIResponse = await fetch(`https://brasilapi.com.br/api/ibge/uf/v1
+    `)
+    if(APIResponse.status === 200){
+        const data = await APIResponse.json()
+        console.log(data.length)
+        for (let index = 0; index < data.length; index++) {
+            const doc = `
+           <option value=${data[index]["sigla"]}>${data[index]["sigla"]}</option>
+           `
+           document.querySelector('#estado').appendChild(doc)  
+        }
+        
+    }else{
+        console.log("Algo deu errado")
+    }
+}
+
 //Eventos
 document.getElementById("pesquisar")
     .addEventListener("click", mainFunc)
+document.getElementById("estado")
+    .addEventListener("onchange", carregarEstados())
+// document.getElementById("cidades")
+//     .addEventListener("onchange", carregarCidades)

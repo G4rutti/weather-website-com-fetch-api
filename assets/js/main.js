@@ -1,5 +1,3 @@
-
-
 mainFunc = async() => {
         const data = await fetchTempo(document.getElementById("cidade").value)
         const dataTraducao = await fetchTraducao(data["current"]["condition"]["text"])
@@ -61,13 +59,15 @@ const fetchTraducao = async(traducao) => {
 }
 
 async function carregarEstados(){
-    const APIResponse = await fetch(`https://brasilapi.com.br/api/ibge/uf/v1
+    carregarCidades("RO")
+    const APIResponse = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados
     `)
     if(APIResponse.status === 200){
         const data = await APIResponse.json()
-        console.log(data[1]['sigla'])
-        for (let index = 1; index <= data.length; index++) {
-            const doc = `
+        console.log(data[0]['sigla'])
+        for (let index = 0; index <= data.length; index++) {
+            const doc = document.createElement('option')
+            doc.innerHTML = `
            <option value=${data[index]['sigla']}>${data[index]['sigla']}</option>
            `
            document.querySelector('#estado').append(doc)  
@@ -77,10 +77,24 @@ async function carregarEstados(){
     }
 }
 
+async function carregarCidades(estado = document.getElementById("estado").value){
+    const APIResponse = await fetch(`https://brasilapi.com.br/api/ibge/municipios/v1/${estado}?providers=dados-abertos-br,gov,wikipedia
+    `)
+    document.querySelector('#cidades').innerHTML = ""
+    if(APIResponse.status === 200){
+        const data = await APIResponse.json()
+        for (let index = 0; index <= data.length; index++) {
+            const doc = document.createElement('option')
+            doc.innerHTML = `
+           <option value=${data[index]['nome']}>${data[index]['nome']}</option>
+           `
+           document.querySelector('#cidades').append(doc)  
+        }
+    }else{
+        console.log("Algo deu errado")
+    }
+}
+
 //Eventos
 document.getElementById("pesquisar")
     .addEventListener("click", mainFunc)
-document.getElementById("estado")
-    .addEventListener("onchange", carregarEstados)
-// document.getElementById("cidades")
-//     .addEventListener("onchange", carregarCidades)
